@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>用户中心</title>
+    <script src="//g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js"></script>
+  	<script>
+  		function setCookie(cname,cvalue,exdays){
+			  var d = new Date();
+			  d.setTime(d.getTime()+(exdays*24*60*60*1000));
+			  var expires = "expires="+d.toGMTString();
+			  document.cookie = cname + "=" + cvalue + "; " + expires;
+			}
+			function getCookie(cname){
+			  var name = cname + "=";
+			  var ca = document.cookie.split(';');
+			  for(var i=0; i<ca.length; i++) 
+			  {
+			    var c = ca[i].trim();
+			    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+			  }
+			  return "";
+			}
+  	</script>
+  	<script src="http://www.jq22.com/jquery/jquery-1.7.1.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
