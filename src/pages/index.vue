@@ -1,7 +1,7 @@
 <template>
 	<div class="home_content">
 		<div class="module_box">
-			<a href="javascript:void(0)" v-for="systemMsg in listMsg" @click="enter(systemMsg.id , systemMsg.url)"><img class="moduleImg" :src="'static/img/'+systemMsg.id+'@2x.png'"/></a>
+			<a href="javascript:void(0)" v-for="(systemMsg,index) in listMsg" :key="index"  @click="enter(systemMsg.id , systemMsg.url)"><img class="moduleImg" :src="systemMsg.imgUrl"/></a>
 		</div>
 	</div>
 </template>
@@ -31,7 +31,7 @@
 			list(){
 				this.axios.post(process.env.domain+'/user/index').then(res => {
 					this.listMsg=res.data.result.list;
-					console.log(res.data)
+					
 				});
 			},
 			enter(id , url){
